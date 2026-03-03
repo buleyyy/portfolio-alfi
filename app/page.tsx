@@ -81,6 +81,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
 
       {/* ABOUT ME SECTION */}
       <section id="about" className="bg-[#1e293b]/30 py-32 px-12 border-t border-white/5">
