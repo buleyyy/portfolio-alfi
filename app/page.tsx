@@ -1,5 +1,5 @@
 import Image from "next/image";
-// Mengimpor ikon sosial media
+// impor ikon sosial media
 import { SiGmail, SiInstagram, SiLinkedin, SiGithub } from "react-icons/si";
 
 export default function Home() {
@@ -71,12 +71,12 @@ export default function Home() {
               <Image 
                 src="/profil.jpg" 
                 alt="Alfi Fauzi"
-                width={800} // Kita kasih jatah pixel lebih besar
-                height={800} // Agar saat melar tetap tajam
+                width={800} // pixel besar
+                height={800} // Agar saat strech tetap tajam
                 quality={100}
                 className="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-700"
                 priority
-                unoptimized={true} // Tambahkan ini sebagai jurus terakhir
+                unoptimized={true} 
               />
             </div>
           </div>
