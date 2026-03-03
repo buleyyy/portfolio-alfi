@@ -63,7 +63,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* FOTO PROFIL */}
+{/* FOTO PROFIL */}
         <div className="md:w-2/5 flex justify-center relative">
           <div className="absolute inset-0 bg-blue-500/10 blur-[120px] rounded-full"></div>
           <div className="relative w-80 h-80 md:w-[480px] md:h-[480px]">
@@ -72,6 +72,8 @@ export default function Home() {
                 src="/profil.jpg" 
                 alt="Alfi Fauzi"
                 fill
+                sizes="(max-width: 768px) 320px, 480px"
+                quality={100}
                 className="object-cover scale-105 hover:scale-110 transition-transform duration-700"
                 priority
               />
