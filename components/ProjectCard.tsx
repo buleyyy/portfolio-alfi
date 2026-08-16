@@ -19,7 +19,7 @@ export default function ProjectCard({
           reverse ? "md:order-2" : ""
         }`}
       >
-        <ProjectVisual kind={project.kind} />
+        <ProjectVisual kind={project.kind} image={project.image} name={project.name} />
       </div>
 
       <div className="p-7 md:p-10 space-y-5">

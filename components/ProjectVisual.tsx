@@ -1,11 +1,33 @@
+import Image from "next/image";
 import type { ProjectKind } from "@/lib/content";
 
 // Abstract, kind-specific visual treatment so projects don't all
 // look identical. "system" reads as architecture, "data" reads as
 // a dashboard, "brand" reads as an editorial swatch/identity block.
-// These are placeholders — swap for real screenshots when available.
+// These are the SVG fallbacks used when no real image is provided
+// yet via `image` in lib/content.ts.
 
-export default function ProjectVisual({ kind }: { kind: ProjectKind }) {
+interface ProjectVisualProps {
+  kind: ProjectKind;
+  image?: string;
+  name: string;
+}
+
+export default function ProjectVisual({ kind, image, name }: ProjectVisualProps) {
+  if (image) {
+    return (
+      <div className="relative w-full h-full">
+        <Image
+          src={image}
+          alt={name}
+          fill
+          sizes="(min-width: 768px) 50vw, 100vw"
+          className="object-cover"
+        />
+      </div>
+    );
+  }
+
   if (kind === "system") {
     return (
       <svg viewBox="0 0 400 260" className="w-full h-full" aria-hidden="true">

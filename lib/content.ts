@@ -37,6 +37,7 @@ export interface Project {
   stack: string[];
   outcome: string;
   role: string;
+  image?: string;
 }
 
 export const projects: Project[] = [
@@ -46,6 +47,7 @@ export const projects: Project[] = [
     kind: "system",
     name: "Ali Nursery",
     tagline: "Digital Ordering & Inventory System",
+    image: "/projects/ali-nursery.png",
     problem:
       "Orders and stock were being tracked manually, with no way to confirm in real time whether what customers ordered actually matched what was in inventory.",
     solutionSolution:
@@ -75,6 +77,7 @@ export const projects: Project[] = [
     kind: "data",
     name: "E-Wallet Spending Analytics",
     tagline: "Data Analytics Dashboard",
+    image: "/projects/ewallet-dashboard.png",
     problem:
       "Transaction-level data had no structure behind it — no way to see spending patterns, category breakdowns, or trends without digging through raw records.",
     solutionSolution:
@@ -102,6 +105,7 @@ export const projects: Project[] = [
     kind: "brand",
     name: "Kopi Umbara",
     tagline: "Brand Development & Digital Experience",
+    image: "/projects/kopi-umbara.png",
     problem:
       "A bottled coffee brand had no identity and no digital presence — it needed a name, a visual language, and a way for customers to actually find and buy it.",
     solutionSolution:
