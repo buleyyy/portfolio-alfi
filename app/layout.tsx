@@ -13,21 +13,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alfi Fauzi | Portfolio",
+  title: "Alfi Fauzi — Digital Products for Growing Businesses",
   description:
-    "Portfolio of Alfi Fauzi — Information Systems Student passionate about Data Analytics & Web Development. Explore my experience, skills, and services.",
+    "I build digital products that move businesses forward — full-stack web development, digital systems, data analytics, and digital experiences for businesses and growing brands.",
   keywords: [
     "Alfi Fauzi",
-    "Portfolio",
+    "Freelance Web Developer",
+    "Full-Stack Development",
     "Data Analytics",
-    "Web Development",
-    "Information Systems",
+    "Digital Systems",
+    "Brand & Digital Experience",
   ],
   authors: [{ name: "Alfi Fauzi" }],
   openGraph: {
-    title: "Alfi Fauzi | Portfolio",
+    title: "Alfi Fauzi — Digital Products for Growing Businesses",
     description:
-      "Information Systems Student passionate about Data Analytics & Web Development.",
+      "Full-stack web development, digital systems, data analytics, and digital experiences for businesses and growing brands.",
     type: "website",
   },
 };
@@ -39,9 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>
