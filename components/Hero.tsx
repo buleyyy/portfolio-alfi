@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Button from "@/components/ui/Button";
-import HeroVisual from "@/components/HeroVisual";
 import { hero } from "@/lib/content";
 
 export default function Hero() {
@@ -55,7 +55,19 @@ export default function Hero() {
           </div>
 
           <div className="hidden md:flex justify-center">
-            <HeroVisual />
+            <div
+              className="relative w-full max-w-md aspect-square rounded-[var(--radius-lg)] overflow-hidden"
+              style={{ border: "1px solid var(--border-medium)" }}
+            >
+              <Image
+                src="/profil.jpg"
+                alt="Alfi Fauzi"
+                fill
+                sizes="(min-width: 768px) 448px, 100vw"
+                className="object-cover"
+                priority
+              />
+            </div>
           </div>
         </div>
       </div>
