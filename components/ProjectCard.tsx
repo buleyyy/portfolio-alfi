@@ -1,5 +1,21 @@
 import type { Project } from "@/lib/content";
 import ProjectVisual from "@/components/ProjectVisual";
+import AliNurseryGallery from "@/components/AliNurseryGallery";
+
+const aliNurseryFeatures = [
+  {
+    title: "Customer Ordering Flow",
+    desc: "Customers can securely log in, browse products, view real-time stock availability, complete checkout, and track their orders from a single web interface.",
+  },
+  {
+    title: "Admin Order Management",
+    desc: "Administrators verify payments, manage incoming orders, update order status, and monitor inventory through a centralized dashboard.",
+  },
+  {
+    title: "Sales Reporting",
+    desc: "The system generates structured sales reports with Excel export functionality to support operational monitoring and business decision-making.",
+  },
+];
 
 export default function ProjectCard({
   project,
@@ -8,6 +24,8 @@ export default function ProjectCard({
   project: Project;
   reverse?: boolean;
 }) {
+  const isAliNursery = project.slug === "ali-nursery";
+
   return (
     <article
       className={`scroll-animate grid md:grid-cols-2 gap-0 md:gap-12 items-center rounded-[var(--radius-lg)] overflow-hidden card-lift ${
@@ -109,6 +127,35 @@ export default function ProjectCard({
                 {project.outcome}
               </p>
             </div>
+
+            {isAliNursery && (
+              <div className="pt-2 space-y-6">
+                <div>
+                  <p className="text-[11px] uppercase tracking-widest font-semibold mb-3" style={{ color: "var(--text-tertiary)" }}>
+                    Gallery
+                  </p>
+                  <AliNurseryGallery />
+                </div>
+
+                <div className="grid sm:grid-cols-3 gap-4">
+                  {aliNurseryFeatures.map((f) => (
+                    <div
+                      key={f.title}
+                      className="rounded-[var(--radius-md)] p-5 card-lift"
+                      style={{
+                        background: "var(--bg-elevated-2)",
+                        border: "1px solid var(--border-subtle)",
+                      }}
+                    >
+                      <h4 className="text-sm font-bold">{f.title}</h4>
+                      <p className="text-xs mt-2 leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                        {f.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </details>
 
