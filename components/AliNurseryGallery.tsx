@@ -1,57 +1,103 @@
 "use client";
 
 import { useState } from "react";
-import Image, { type StaticImageData } from "next/image";
-
-import LoginPage from "@/public/projects/ali/LoginPage.png";
-import HomePage from "@/public/projects/ali/HomePage.png";
-import ProductPage from "@/public/projects/ali/ProductPage.png";
-import CheckoutPage from "@/public/projects/ali/CheckoutPage.png";
-import OrderTrackingPage from "@/public/projects/ali/OrderTrackingPage.png";
-import DashboardAdminPage from "@/public/projects/ali/DashboardAdminPage.png";
-import AdminManageOrders from "@/public/projects/ali/AdminManageOrders.png";
-import SalesReportAdmin from "@/public/projects/ali/SalesReportAdmin.png";
+import Image from "next/image";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 interface GalleryImage {
-  src: StaticImageData;
+  src: string;
   alt: string;
-  group: "Customer Experience" | "Admin Panel";
 }
 
 const images: GalleryImage[] = [
-  { src: LoginPage, alt: "Ali Nursery — customer login page", group: "Customer Experience" },
-  { src: HomePage, alt: "Ali Nursery — customer homepage", group: "Customer Experience" },
-  { src: ProductPage, alt: "Ali Nursery — product listing page", group: "Customer Experience" },
-  { src: CheckoutPage, alt: "Ali Nursery — checkout page", group: "Customer Experience" },
-  { src: OrderTrackingPage, alt: "Ali Nursery — order tracking page", group: "Customer Experience" },
-  { src: DashboardAdminPage, alt: "Ali Nursery — admin dashboard overview", group: "Admin Panel" },
-  { src: AdminManageOrders, alt: "Ali Nursery — admin order management", group: "Admin Panel" },
-  { src: SalesReportAdmin, alt: "Ali Nursery — admin sales report", group: "Admin Panel" },
+  { src: "/projects/ali/LoginPage.png", alt: "Ali Nursery — customer login page" },
+  { src: "/projects/ali/HomePage.png", alt: "Ali Nursery — customer homepage" },
+  { src: "/projects/ali/ProductPage.png", alt: "Ali Nursery — product listing page" },
+  { src: "/projects/ali/CheckoutPage.png", alt: "Ali Nursery — checkout page" },
+  { src: "/projects/ali/OrderTrackingPage.png", alt: "Ali Nursery — order tracking page" },
+  { src: "/projects/ali/DashboardAdminPage.png", alt: "Ali Nursery — admin dashboard overview" },
+  { src: "/projects/ali/AdminManageOrders.png", alt: "Ali Nursery — admin order management" },
+  { src: "/projects/ali/SalesReportAdmin.png", alt: "Ali Nursery — admin sales report" },
 ];
 
 export default function AliNurseryGallery() {
   const [activeIndex, setActiveIndex] = useState(0);
   const active = images[activeIndex];
 
+  const go = (delta: number) => {
+    setActiveIndex((i) => (i + delta + images.length) % images.length);
+  };
+
   return (
     <div className="w-full">
       {/* Main preview */}
-      <div
-        key={activeIndex}
-        className="relative w-full aspect-[16/10] rounded-[var(--radius-lg)] overflow-hidden card-lift"
-        style={{
-          border: "1px solid var(--border-medium)",
-          animation: "fadeIn var(--dur-slow) var(--ease-out)",
-        }}
-      >
-        <Image
-          src={active.src}
-          alt={active.alt}
-          fill
-          sizes="(min-width: 768px) 640px, 100vw"
-          className="object-cover"
-          priority={activeIndex === 0}
-        />
+      <div className="relative">
+        <div
+          key={activeIndex}
+          className="relative w-full aspect-[16/10] md:aspect-[16/9] rounded-[var(--radius-lg)] overflow-hidden"
+          style={{
+            border: "1px solid var(--border-medium)",
+            boxShadow: "var(--shadow-lg)",
+            animation: "fadeIn var(--dur-base) var(--ease-out)",
+          }}
+        >
+          <Image
+            src={active.src}
+            alt={active.alt}
+            fill
+            sizes="(min-width: 1024px) 900px, 100vw"
+            quality={100}
+            className="object-cover object-top"
+            priority={activeIndex === 0}
+          />
+        </div>
+
+        {/* Prev / next arrows */}
+        <button
+          type="button"
+          onClick={() => go(-1)}
+          aria-label="Previous screenshot"
+          className="hidden sm:flex absolute top-1/2 -left-5 -translate-y-1/2 w-10 h-10 rounded-full items-center justify-center backdrop-blur-sm transition-transform hover:-translate-x-0.5 hover:scale-105"
+          style={{
+            background: "rgba(10,10,13,0.85)",
+            border: "1px solid var(--border-medium)",
+            color: "var(--text-primary)",
+          }}
+        >
+          <FiChevronLeft size={18} />
+        </button>
+        <button
+          type="button"
+          onClick={() => go(1)}
+          aria-label="Next screenshot"
+          className="hidden sm:flex absolute top-1/2 -right-5 -translate-y-1/2 w-10 h-10 rounded-full items-center justify-center backdrop-blur-sm transition-transform hover:translate-x-0.5 hover:scale-105"
+          style={{
+            background: "rgba(10,10,13,0.85)",
+            border: "1px solid var(--border-medium)",
+            color: "var(--text-primary)",
+          }}
+        >
+          <FiChevronRight size={18} />
+        </button>
+      </div>
+
+      {/* Dot pagination */}
+      <div className="mt-4 flex justify-center gap-1.5">
+        {images.map((img, i) => (
+          <button
+            key={`dot-${img.alt}`}
+            type="button"
+            onClick={() => setActiveIndex(i)}
+            aria-label={`Go to screenshot ${i + 1}`}
+            aria-current={i === activeIndex}
+            className="rounded-full transition-all duration-[var(--dur-fast)]"
+            style={{
+              width: i === activeIndex ? "18px" : "6px",
+              height: "6px",
+              background: i === activeIndex ? "var(--accent-violet)" : "var(--border-medium)",
+            }}
+          />
+        ))}
       </div>
 
       {/* Thumbnail strip */}
@@ -69,15 +115,16 @@ export default function AliNurseryGallery() {
                 i === activeIndex
                   ? "1.5px solid var(--accent-violet)"
                   : "1px solid var(--border-subtle)",
-              opacity: i === activeIndex ? 1 : 0.6,
+              opacity: i === activeIndex ? 1 : 0.55,
             }}
           >
             <Image
               src={img.src}
               alt=""
               fill
-              sizes="120px"
-              className="object-cover"
+              sizes="160px"
+              quality={90}
+              className="object-cover object-top"
             />
           </button>
         ))}

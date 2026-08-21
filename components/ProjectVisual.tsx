@@ -21,7 +21,8 @@ export default function ProjectVisual({ kind, image, name }: ProjectVisualProps)
           src={image}
           alt={name}
           fill
-          sizes="(min-width: 768px) 50vw, 100vw"
+          sizes="(min-width: 1024px) 640px, 100vw"
+          quality={100}
           className="object-cover"
         />
       </div>

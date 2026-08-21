@@ -14,9 +14,9 @@ export const nav = {
 };
 
 export const hero = {
-  eyebrow: "Available for freelance work",
-  headline: "I build digital products that move businesses forward.",
-  sub: "Full-stack web development, digital systems, data analytics, and digital experiences for businesses and growing brands.",
+  eyebrow: "Final-year Information Systems student",
+  headline: "I build functional web products — and I'm ready to bring that to a team.",
+  sub: "Full-stack development, digital systems, and data-driven interfaces. Open to internships, agency roles, and freelance projects across web and digital products.",
   ctaPrimary: { label: "View My Work", href: "#work" },
   ctaSecondary: { label: "Let's Work Together", href: "#contact" },
   credibility: "Information Systems Student @ Universitas Gunadarma",
@@ -38,6 +38,7 @@ export interface Project {
   outcome: string;
   role: string;
   image?: string;
+  reportsLink?: string;
 }
 
 export const projects: Project[] = [
@@ -47,7 +48,7 @@ export const projects: Project[] = [
     kind: "system",
     name: "Ali Nursery",
     tagline: "Digital Ordering & Inventory System",
-    image: "/projects/ali-nursery.png",
+    image: "/projects/ali/LoginPage.png",
     problem:
       "Orders and stock were being tracked manually, with no way to confirm in real time whether what customers ordered actually matched what was in inventory.",
     solutionSolution:
@@ -72,96 +73,114 @@ export const projects: Project[] = [
       "A production system live on Vercel and Railway, replacing manual order and stock tracking with a single source of truth the business can rely on.",
   },
   {
-    slug: "ewallet-analytics",
+    slug: "college-practicum",
     index: "02",
     kind: "data",
-    name: "E-Wallet Spending Analytics",
-    tagline: "Data Analytics Dashboard",
-    image: "/projects/ewallet-dashboard.png",
+    name: "College Practicum Projects",
+    tagline: "Applied Coursework — Data, Modeling & Interface Design",
     problem:
-      "Transaction-level data had no structure behind it — no way to see spending patterns, category breakdowns, or trends without digging through raw records.",
+      "Coursework across data mining, data science, systems modeling, and interface design tends to stay siloed — each assignment graded and forgotten, with no single place showing how the skills connect.",
     solutionSolution:
-      "An interactive dashboard that turns raw transactions into readable charts and summaries, built for fast, confident decisions.",
+      "A collection of hands-on lab work across six courses, applying data mining, data visualization, systems modeling, and interface design to real datasets and case scenarios.",
     system: [
-      "Data ingestion and cleaning pipeline",
-      "Category and time-based aggregation",
-      "Interactive charting layer",
-      "Summary metric cards for at-a-glance reading",
+      "Clustering and classification on real datasets using Weka",
+      "Data cleaning, aggregation, and visualization in Python and Power BI",
+      "System modeling and UML diagramming with StarUML",
+      "Rule-based knowledge representation using Prolog",
+      "Interface prototyping and usability principles in Figma",
     ],
     features: [
-      "Spending breakdown by category",
-      "Trend view across time periods",
-      "Interactive charts built with Chart.js",
-      "Responsive dashboard layout",
+      "K-Means clustering and data mining workflows (Weka)",
+      "Exploratory data analysis and visualization (Python, Matplotlib, Seaborn)",
+      "Dataset appending and BI reporting (Power BI)",
+      "UML modeling for system design (StarUML)",
+      "Knowledge-based rule systems (Prolog)",
+      "UI prototyping fundamentals (Figma)",
     ],
-    stack: ["HTML", "CSS", "JavaScript", "Chart.js"],
-    role: "Structured the data, designed the visualizations, and built the frontend from scratch.",
+    stack: ["Python", "Weka", "Power BI", "StarUML", "Prolog", "Figma"],
+    role: "Completed independently as part of Information Systems coursework — from problem framing to final report for each module.",
     outcome:
-      "A self-contained analytics dashboard that shows how raw financial data can become a usable decision-support tool.",
-  },
-  {
-    slug: "kopi-umbara",
-    index: "03",
-    kind: "brand",
-    name: "Kopi Umbara",
-    tagline: "Brand Development & Digital Experience",
-    image: "/projects/kopi-umbara.png",
-    problem:
-      "A bottled coffee brand had no identity and no digital presence — it needed a name, a visual language, and a way for customers to actually find and buy it.",
-    solutionSolution:
-      "A brand built from zero: naming, an earthy vintage-travel-journal identity, and a digital storefront to bring it to customers.",
-    system: [
-      "Brand naming and positioning",
-      "Visual identity — palette, type, tone",
-      "Customer-facing storefront",
-      "Admin panel for the business side",
-    ],
-    features: [
-      "Warm, earthy vintage-journal visual identity",
-      "React + Vite + Tailwind storefront",
-      "Express + Prisma + MySQL backend",
-      "Admin panel for day-to-day operations",
-    ],
-    stack: ["React", "Vite", "Tailwind CSS", "Express", "Prisma", "MySQL"],
-    role: "Co-founder — led brand identity, product design, and the full-stack build.",
-    outcome:
-      "A cohesive brand and digital experience built from the ground up, co-founded and run end-to-end.",
+      "A working grasp of the full data-to-system pipeline — from raw datasets to models, diagrams, and interfaces — built through six semesters of applied lab work.",
+    reportsLink: "https://drive.google.com/drive/folders/1hs-tuSyRrMLKtlDhWJ_gYWeDXM5_x8zS?usp=sharing",
   },
 ];
 
 export const capabilities = [
   {
     title: "Web Development",
-    desc: "A website or web app that actually represents the business — built to convert visitors, not just look good.",
+    desc: "Building websites and web apps end-to-end — from layout to logic, functional and easy to use.",
   },
   {
     title: "Digital Systems",
-    desc: "Ordering systems, dashboards, and internal tools that replace manual work with something reliable and repeatable.",
+    desc: "Ordering flows, dashboards, and internal tools that replace manual, repetitive work.",
   },
   {
     title: "Data & Analytics",
-    desc: "Turning scattered business data into dashboards and reports that make the next decision easier to make.",
+    desc: "Turning raw data into dashboards and reports that are actually easy to read and act on.",
   },
   {
     title: "Digital Experience",
-    desc: "A digital presence — identity, UI/UX, storefront — that gives a brand a consistent face customers recognize.",
+    desc: "UI/UX and digital presence work — giving a product or brand a consistent, usable face.",
   },
 ];
 
 export const aboutStory = {
   progression: [
-    "Accounting",
     "Information Systems",
     "Web Development",
     "Data & Analytics",
     "Digital Products",
   ],
   paragraphs: [
-    "I started in accounting — following how numbers move through a business, and where they break down. That's where I first learned to think in systems: inputs, processes, outputs that have to reconcile.",
-    "That instinct is what pulled me into Information Systems at Universitas Gunadarma, and from there into building the systems themselves — full-stack web development, data analytics, and digital branding. A nursery platform's ordering and inventory system. An e-wallet spending dashboard. A coffee brand's identity and storefront, built from nothing.",
-    "Different projects, same starting point: understand the business problem first, then build the digital solution.",
+    "I'm a final-year Information Systems student at Universitas Gunadarma (3.75 GPA), with interests spanning IT Support, Information Systems, Data Analytics, Business/Digital Transformation, and UI/UX. My technical projects run on Python, Google Colab, Weka, SQL, UML, and Figma — and from that came things like UMKM ordering systems, e-wallet spending analytics, and an IT troubleshooting knowledge base.",
+    "Outside coursework, I've also spent time in campus organizations handling people coordination and event operations — Staff PSDM at BEM FIKTI and Head of Operations for Gunadarma Olympiad Committee. I've also completed IBM SkillsBuild coursework on data classification and summarization, and Dicoding's intro to AI.",
+    "I'm in my final year now, still learning, and looking for a place — an agency, a company's dev or IT team, an internship — where I can keep building and grow from there.",
   ],
 };
+
+export const education = {
+  school: "Universitas Gunadarma",
+  degree: "S1 Sistem Informasi",
+  gpa: "3.75 / 4.00",
+  courses: [
+    "Sistem Basis Data",
+    "Analisis & Perancangan Sistem",
+    "Data Mining",
+    "Sains Data",
+    "Business Intelligence",
+    "Interaksi Manusia & Komputer",
+    "Jaringan Komputer",
+  ],
+};
+
+export const organizations = [
+  {
+    role: "Staff PSDM (Pengembangan Sumber Daya Manusia)",
+    org: "BEM FIKTI Universitas Gunadarma",
+    period: "Dec 2024 — Dec 2025",
+    points: [
+      "Supported student development programs through activity coordination, internal communication, and program execution.",
+      "Helped plan and evaluate activities to improve member engagement and team coordination.",
+    ],
+  },
+  {
+    role: "Head of Operations",
+    org: "Gunadarma Olympiad Committee",
+    period: "Apr 2025 — Aug 2025",
+    points: [
+      "Led operational coordination, making sure technical and non-technical needs ran according to plan.",
+      "Organized workflows, task delegation, and cross-team communication from preparation through execution.",
+    ],
+  },
+];
+
+export const otherProjects = [
+  {
+    title: "IT Troubleshooting Handbook",
+    tagline: "Personal IT Support Case Project — built in Notion",
+    desc: "A troubleshooting knowledge base covering common network, software, device, and OS issues — with diagnosis flow, likely causes, resolution steps, and preventive actions to speed up technical problem-solving.",
+  },
+];
 
 export const process = [
   {
@@ -192,35 +211,34 @@ export const process = [
 ];
 
 export const whoIWorkWith = {
-  eyebrow: "Who I Work With",
+  eyebrow: "Where I Fit",
   title: "A good fit if you're...",
   items: [
     {
-      title: "A small business going digital",
-      desc: "You're replacing spreadsheets and manual tracking with a system that actually fits how you operate.",
+      title: "A company or agency hiring for an internship or entry-level dev role",
+      desc: "I'm comfortable across the stack — frontend, backend, and the database in between — and I pick things up fast.",
     },
     {
-      title: "A growing brand that needs a real identity",
-      desc: "You have a product worth selling, but no visual identity or digital presence to match it yet.",
+      title: "A small business or founder going digital",
+      desc: "You need a website, ordering system, or dashboard to replace something manual, and want it built properly.",
     },
     {
-      title: "A founder who needs to see the numbers clearly",
-      desc: "You have the data, just not a way to read it — you need it turned into something you can act on.",
+      title: "Someone with data but no easy way to read it",
+      desc: "You have the numbers, just not a way to see them clearly — I can turn that into something usable.",
     },
   ],
 };
 
 export const trust = [
-  { label: "Selected Projects", value: "3" },
+  { label: "GPA", value: "3.75 / 4.00" },
   { label: "GitHub", value: "@buleyyy", href: "https://github.com/buleyyy" },
-  { label: "Freelance Platforms", value: "Fiverr · Fastwork" },
   { label: "Institution", value: "Information Systems, Universitas Gunadarma" },
 ];
 
 export const finalCta = {
-  headline: "Have a business problem that needs a digital solution?",
-  sub: "Let's turn the idea into something functional, useful, and ready to grow.",
-  cta: { label: "Let's Build It", href: "#contact" },
+  headline: "Looking for someone to build with, or bring onto the team?",
+  sub: "I'm open to internships, entry-level roles, and freelance projects — let's talk about what you need.",
+  cta: { label: "Let's Talk", href: "#contact" },
 };
 
 export const contact = {
@@ -242,5 +260,5 @@ export const contact = {
 
 export const footer = {
   name: "Alfi Fauzi",
-  positioning: "Full-stack development, digital systems & data for growing businesses.",
+  positioning: "Information Systems student — full-stack development, digital systems & data.",
 };
