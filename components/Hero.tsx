@@ -54,19 +54,45 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="hidden md:flex justify-center">
+          <div className="hidden md:flex justify-center relative">
             <div
-              className="relative w-full max-w-md aspect-square rounded-[var(--radius-lg)] overflow-hidden"
-              style={{ border: "1px solid var(--border-medium)" }}
+              className="absolute -inset-6 rounded-[calc(var(--radius-lg)+24px)] opacity-40 blur-2xl"
+              style={{ backgroundImage: "var(--accent-gradient)" }}
+            />
+            <div
+              className="relative w-full max-w-md aspect-square rounded-[var(--radius-lg)] overflow-hidden p-[2px]"
+              style={{ backgroundImage: "var(--accent-gradient)" }}
             >
-              <Image
-                src="/profil.jpg"
-                alt="Alfi Fauzi"
-                fill
-                sizes="(min-width: 768px) 448px, 100vw"
-                className="object-cover"
-                priority
-              />
+              <div className="relative w-full h-full rounded-[calc(var(--radius-lg)-2px)] overflow-hidden">
+                <Image
+                  src="/profil.jpg"
+                  alt="Alfi Fauzi"
+                  fill
+                  sizes="(min-width: 768px) 448px, 100vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+
+            <div
+              className="absolute -bottom-6 -left-8 px-5 py-4 rounded-[var(--radius-md)] backdrop-blur-xl drift"
+              style={{ background: "rgba(18,18,24,0.85)", border: "1px solid var(--border-medium)", boxShadow: "var(--shadow-lg)" }}
+            >
+              <p className="text-2xl font-bold gradient-text leading-none">3.75</p>
+              <p className="text-[10px] mt-1.5 uppercase tracking-wider" style={{ color: "var(--text-tertiary)" }}>
+                GPA / 4.00
+              </p>
+            </div>
+
+            <div
+              className="absolute -top-5 -right-6 flex items-center gap-2 px-4 py-2.5 rounded-full backdrop-blur-xl"
+              style={{ background: "rgba(18,18,24,0.85)", border: "1px solid var(--border-medium)", boxShadow: "var(--shadow-md)" }}
+            >
+              <span className="w-2 h-2 rounded-full flow-node" style={{ background: "#4ade80" }} />
+              <span className="text-xs font-semibold" style={{ color: "var(--text-primary)" }}>
+                Open to opportunities
+              </span>
             </div>
           </div>
         </div>

@@ -156,13 +156,13 @@ body {
 }
 
 .card-lift {
-  transition: transform var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-standard), box-shadow var(--dur-base) var(--ease-standard);
+  transition: transform var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-standard), box-shadow var(--dur-base) var(--ease-standard), background-color var(--dur-base) var(--ease-standard);
 }
 
 .card-lift:hover {
   transform: translateY(-6px);
-  border-color: rgba(139, 124, 246, 0.28);
-  box-shadow: var(--shadow-lg);
+  border-color: rgba(139, 124, 246, 0.32);
+  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(139, 124, 246, 0.08);
 }
 
 .bg-grid-faint {

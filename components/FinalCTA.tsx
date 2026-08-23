@@ -17,7 +17,9 @@ export default function FinalCTA() {
           {finalCta.sub}
         </p>
         <div className="mt-10 flex justify-center">
-          <Button href={finalCta.cta.href}>{finalCta.cta.label}</Button>
+          <Button href={finalCta.cta.href} external>
+            {finalCta.cta.label}
+          </Button>
         </div>
       </div>
     </section>

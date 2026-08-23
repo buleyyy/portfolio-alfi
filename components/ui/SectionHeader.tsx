@@ -17,8 +17,8 @@ export default function SectionHeader({
 
   return (
     <div className={`scroll-animate max-w-2xl ${alignCls} ${className}`}>
-      <div className="inline-flex items-center gap-2.5">
-        <span className="w-1.5 h-1.5 rounded-full flow-node" style={{ background: "var(--accent-violet)" }} />
+      <div className="inline-flex items-center gap-3">
+        <span className="h-[2px] w-6 rounded-full" style={{ backgroundImage: "var(--accent-gradient)" }} />
         <span
           className="text-xs uppercase tracking-[0.25em] font-semibold"
           style={{ color: "var(--accent-violet)" }}

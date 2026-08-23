@@ -109,18 +109,22 @@ export const capabilities = [
   {
     title: "Web Development",
     desc: "Building websites and web apps end-to-end — from layout to logic, functional and easy to use.",
+    icon: "code",
   },
   {
     title: "Digital Systems",
     desc: "Ordering flows, dashboards, and internal tools that replace manual, repetitive work.",
+    icon: "layers",
   },
   {
     title: "Data & Analytics",
     desc: "Turning raw data into dashboards and reports that are actually easy to read and act on.",
+    icon: "chart",
   },
   {
     title: "Digital Experience",
     desc: "UI/UX and digital presence work — giving a product or brand a consistent, usable face.",
+    icon: "figma",
   },
 ];
 
@@ -162,6 +166,7 @@ export const organizations = [
       "Supported student development programs through activity coordination, internal communication, and program execution.",
       "Helped plan and evaluate activities to improve member engagement and team coordination.",
     ],
+    photos: ["/organizations/StaffBEMFIKTI.JPG", "/organizations/VolunAcaraFiktiSpace.jpg", "/organizations/BEMFiktiRapat.jpeg"],
   },
   {
     role: "Head of Operations",
@@ -171,6 +176,17 @@ export const organizations = [
       "Led operational coordination, making sure technical and non-technical needs ran according to plan.",
       "Organized workflows, task delegation, and cross-team communication from preparation through execution.",
     ],
+    photos: ["/organizations/OlimpiadeGunadarma.JPG", "/organizations/OlimpiadeGunadarmaRapat.JPG", "/organizations/OlimpiadeGunadarma3.jpg"],
+  },
+  {
+    role: "Chairperson",
+    org: "Cyber Space 2024",
+    period: "2024",
+    points: [
+      "Led an independent, region-wide annual campus event as chairperson, overseeing planning and execution.",
+      "Coordinated cross-functional teams and external stakeholders to deliver the event end-to-end.",
+    ],
+    photos: ["/organizations/KetuaEventCyberSpace.JPG", "/organizations/CyberSpace2.jpg", "/organizations/CyberSpace3_260821_1.jpg"],
   },
 ];
 
@@ -178,7 +194,45 @@ export const otherProjects = [
   {
     title: "IT Troubleshooting Handbook",
     tagline: "Personal IT Support Case Project — built in Notion",
-    desc: "A troubleshooting knowledge base covering common network, software, device, and OS issues — with diagnosis flow, likely causes, resolution steps, and preventive actions to speed up technical problem-solving.",
+    desc: "A structured troubleshooting knowledge base covering network, software, device, and OS issues — organized from the problems that come up constantly to the rarer ones that matter most when they do.",
+    link: "https://assorted-tuberose-654.notion.site/IT-Troubleshooting-Handbook-376fe7e57267814fa319dd23264b41e7",
+    categories: [
+      {
+        label: "Most Common",
+        items: [
+          "No internet / intermittent Wi-Fi connection",
+          "Slow PC or laptop performance",
+          "Application not responding or crashing",
+          "Printer not detected or failing to print",
+        ],
+      },
+      {
+        label: "Frequent",
+        items: [
+          "Software installation or update failures",
+          "Storage running low / disk cleanup needed",
+          "Peripheral device not recognized (USB, external drive, headset)",
+          "Login or account access issues",
+        ],
+      },
+      {
+        label: "Occasional but Disruptive",
+        items: [
+          "Blue Screen of Error (BSOD) / unexpected system crash",
+          "Driver conflicts after Windows update",
+          "Overheating and thermal shutdown",
+          "File corruption or unexpected data loss",
+        ],
+      },
+      {
+        label: "Rare but Critical",
+        items: [
+          "Suspected malware or ransomware activity",
+          "Boot failure / OS won't start",
+          "Hardware failure requiring escalation (disk, RAM, motherboard)",
+        ],
+      },
+    ],
   },
 ];
 
@@ -238,7 +292,7 @@ export const trust = [
 export const finalCta = {
   headline: "Looking for someone to build with, or bring onto the team?",
   sub: "I'm open to internships, entry-level roles, and freelance projects — let's talk about what you need.",
-  cta: { label: "Let's Talk", href: "#contact" },
+  cta: { label: "Let's Talk", href: "https://instagram.com/alfifauzi__" },
 };
 
 export const contact = {

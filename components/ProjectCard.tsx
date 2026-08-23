@@ -253,11 +253,19 @@ export default function ProjectCard({
                 href={project.reportsLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider px-4 py-2.5 rounded-[var(--radius-sm)] transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider px-4 py-2.5 rounded-[var(--radius-sm)] transition-all duration-[var(--dur-fast)] hover:-translate-y-0.5"
                 style={{
                   background: "var(--bg-elevated-2)",
                   border: "1px solid var(--border-medium)",
                   color: "var(--text-primary)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "rgba(139,124,246,0.4)";
+                  e.currentTarget.style.boxShadow = "0 8px 24px rgba(99,102,241,0.15)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "var(--border-medium)";
+                  e.currentTarget.style.boxShadow = "none";
                 }}
               >
                 <FiExternalLink size={14} />

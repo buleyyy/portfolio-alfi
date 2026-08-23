@@ -12,8 +12,12 @@ export default function SelectedWork() {
   const visible = tab === "All" ? projects : projects.filter((p) => p.slug === "ali-nursery");
 
   return (
-    <section id="work" className="py-24 md:py-32 px-6 md:px-10" style={{ borderTop: "1px solid var(--border-subtle)" }}>
-      <div className="max-w-6xl mx-auto">
+    <section id="work" className="relative py-24 md:py-32 px-6 md:px-10 overflow-hidden" style={{ borderTop: "1px solid var(--border-subtle)" }}>
+      <div
+        className="absolute -top-40 right-[-10%] w-[520px] h-[420px] blur-[140px] rounded-full pointer-events-none"
+        style={{ background: "rgba(79,141,253,0.07)" }}
+      />
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeader
             eyebrow="Selected Work"
@@ -22,7 +26,7 @@ export default function SelectedWork() {
                 Business problems, <span className="gradient-text">turned into products.</span>
               </>
             }
-            sub="Three projects across full-stack systems, data analytics, and brand experience."
+            sub="Full-stack systems and applied coursework, from concept to working product."
           />
 
           <div className="flex items-center gap-6 pb-1">
